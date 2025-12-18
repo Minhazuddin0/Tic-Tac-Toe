@@ -17,11 +17,11 @@ const winningPositions = [
     [2,4,6]
 ]; 
 
-// lets create a fucntion to initialize the game 
+// lets create a fucntion to initialize the game
 
 function initGame(){
     currentPlayer = "X";
-    gameGrid = ["","","","","","","","",""];
+    gameGrid = ["","","","","","","","",""];     
     // UI par empty bhi karna padega boxes 
     boxes.forEach((box, index) => {
         box.innerText = ""; 
