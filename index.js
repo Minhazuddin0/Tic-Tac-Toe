@@ -39,12 +39,16 @@ function swapTurn(){
     gameInfo.innerText = `Current Player - ${currentPlayer}`;
 }
 
+function checkGameOver() {
+    // To Do 
+}
 
 
 function handleClick(index){
     if(gameGrid [index] === "") {
         boxes[index].innerText = currentPlayer;
         gameGrid[index] = currentPlayer;
+        boxes[index].style.pointerEvents = "none";
         // Swap Turn karo
         swapTurn();
         // check koi jeet to nhi gya
