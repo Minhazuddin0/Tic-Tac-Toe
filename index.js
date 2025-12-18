@@ -28,4 +28,34 @@ function initGame(){
 
 initGame();
 
+function swapTurn(){
+    if(currentPlayer === "X") {
+        currentPlayer = "0";
+    }
+    else{
+        currentPlayer = "X";
+    }
+    // UI update
+    gameInfo.innerText = `Current Player - ${currentPlayer}`;
+}
+
+
+
+function handleClick(index){
+    if(gameGrid [index] === "") {
+        boxes[index].innerText = currentPlayer;
+        gameGrid[index] = currentPlayer;
+        // Swap Turn karo
+        swapTurn();
+        // check koi jeet to nhi gya
+        checkGameOver();
+    }
+}
+
+
+boxes.forEach((box, index) => {
+    box.addEventListener("click", () => {
+        handleClick(index);
+    })
+});
 
