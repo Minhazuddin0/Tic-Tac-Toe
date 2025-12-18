@@ -22,6 +22,12 @@ const winningPositions = [
 function initGame(){
     currentPlayer = "X";
     gameGrid = ["","","","","","","","",""];
+    // UI par empty bhi karna padega boxes 
+    boxes.forEach((box, index) => {
+        box.innerText = ""; 
+        boxes[index].style,pointerEvents = "all";
+        // one more thing is missing
+    });
     newGameBtn.classList.remove("active");
     gameInfo.innerText = `Current Player - ${currentPlayer}`;
 }
@@ -40,7 +46,8 @@ function swapTurn(){
 }
 
 function checkGameOver() {
-    // To Do 
+    let answer = "";
+    winningPositions
 }
 
 
@@ -62,4 +69,7 @@ boxes.forEach((box, index) => {
         handleClick(index);
     })
 });
+
+
+newGameBtn.addEventListener("click", initGame);
 
