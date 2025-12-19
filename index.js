@@ -47,7 +47,9 @@ function swapTurn(){
 
 function checkGameOver() {
     let answer = "";
-    winningPositions
+    winningPositions.forEach((position) => {
+        
+    })
 }
 
 
