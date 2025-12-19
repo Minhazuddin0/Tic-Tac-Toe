@@ -48,7 +48,21 @@ function swapTurn(){
 function checkGameOver() {
     let answer = "";
     winningPositions.forEach((position) => {
-        
+        // all boxes should not be non-empty and exactly same in value 
+        if( (gameGrid[position[0]] !== "" || gameGrid[position[1]] !== "" || gameGrid[position[2]] !== "") && (gameGrid[position[0]] === gameGrid[position[1]] ) && (gameGrid[position[1]] === gameGrid[position[2]])){
+
+            // check if winner is X 
+            if(gameGrid[position[0]] === "X")
+                answer = "X";
+            else
+                answer= "0"
+
+            // now we know X/0 is a winner
+            boxes[position[0]].classList.add("win"); 
+            boxes[position[1]].classList.add("win"); 
+            boxes[position[2]].classList.add("win"); 
+
+        }
     })
 }
 
