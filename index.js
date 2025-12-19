@@ -57,13 +57,29 @@ function checkGameOver() {
             else
                 answer= "0"
 
+            // disable pointer events
+            boxes.forEach((box) =>{
+                box.style.pointerEvents = "none";
+            })
+
             // now we know X/0 is a winner
             boxes[position[0]].classList.add("win"); 
             boxes[position[1]].classList.add("win"); 
             boxes[position[2]].classList.add("win"); 
-
         }
-    })
+    });
+
+    // it means we have a winner
+    if(answer !== "") {
+        gameInfo.innerText = `Winner Player - ${answer}`;
+        newGameBtn.classList.add("active");
+        return;
+
+    }
+
+    // let's check whether there is tied
+    let fillCount = 0;
+    gameGrid.forEach((box))
 }
 
 
