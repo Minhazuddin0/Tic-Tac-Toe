@@ -26,7 +26,15 @@ function initGame(){
     boxes.forEach((box, index) => {
         box.innerText = ""; 
         boxes[index].style,pointerEvents = "all";
-        // one more thing is missing
+        // one more thing is missing, initialize boxes with css properties again
+
+        box.classList = `box box${index+1}`;
+
+
+        
+        
+        
+        
     });
     newGameBtn.classList.remove("active");
     gameInfo.innerText = `Current Player - ${currentPlayer}`;
@@ -54,8 +62,10 @@ function checkGameOver() {
             // check if winner is X 
             if(gameGrid[position[0]] === "X")
                 answer = "X";
-            else
-                answer= "0"
+            else{
+                answer= "0";
+            }
+                
 
             // disable pointer events
             boxes.forEach((box) =>{
