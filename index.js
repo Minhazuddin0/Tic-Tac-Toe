@@ -79,7 +79,16 @@ function checkGameOver() {
 
     // let's check whether there is tied
     let fillCount = 0;
-    gameGrid.forEach((box))
+    gameGrid.forEach((box) => {
+        if(box !== "")
+            fillCount++;
+    });
+
+    // board is filled, game is tie
+    if(fillCount === 9){
+        gameInfo.innerText ="GAME TIED !";
+        newGameBtn.classList.add("active");
+    }
 }
 
 
